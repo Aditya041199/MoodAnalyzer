@@ -8,24 +8,23 @@ namespace MoodAnalyzer
 {
     public class AnalyzeMood
     {
-        public const string Happy_Mood = "Happy";
-        public const string Sad_Mood = "Sad";
-        public string Mood(string mood)
+        public string message;
+
+        public AnalyzeMood(string message)
         {
-            if (mood.ToLower().Contains("happy"))
+            this.message = message;
+        }
+        public string MoodAnalyzer()
+        {
+            if (message.ToLower().Contains("sad"))
             {
-                Console.WriteLine("I Am In A " + Happy_Mood + "mood");
-                return mood;
-            }
-            if (mood.ToLower().Contains("sad"))
-            {
-                Console.WriteLine("I Am In A " + Sad_Mood + "mood");
-                return mood;
+                return "SAD";
             }
             else
             {
-                return null;
+                return "HAPPY";
             }
         }
+
     }
 }

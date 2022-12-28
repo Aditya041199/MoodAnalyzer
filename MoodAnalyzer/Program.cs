@@ -1,16 +1,17 @@
-﻿using System;
-using MoodAnalyzer;
+﻿using MoodAnalyzer;
 
-namespace MoodAnalyzer
+public class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Welcome to Mood Anlyzer");
-            AnalyzeMood mo = new AnalyzeMood();
-            mo.Mood("happy");
+        Console.WriteLine("Welcome to Mood Anlyzer");
+        Console.WriteLine("Enter message ");
+        string message = Console.ReadLine();
 
-        }
+        AnalyzeMood mo = new AnalyzeMood(message);
+        string mood = mo.MoodAnalyzer();
+        Console.WriteLine($"{mood} MOOD");
+        Console.ReadLine();
     }
+
 }
